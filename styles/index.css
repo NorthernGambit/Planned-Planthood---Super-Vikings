@@ -162,6 +162,7 @@ main {
     
     .article:nth-of-type(2) {
         flex-direction: row-reverse;
+        margin-bottom: 7rem;
 
         .article-box-right {
             .btn-green {
@@ -170,3 +171,56 @@ main {
         }
     }
 }
+
+footer {
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        aspect-ratio: 1000 / 590;
+        overflow: hidden;
+        
+
+        .footer-bg {
+            grid-area: 1 / 1 / 2 / 3;
+
+            .footer-img {
+                width: 100%;
+            }
+
+        }
+
+        .footer-container-left {
+            grid-area: 1 / 1 / 2 / 2;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            
+            h2 {
+                
+            }
+
+            .contact-info {
+                margin-top: auto;
+                margin-bottom: 0;
+
+                p {
+                    font-size: 1.25rem;
+
+                    i {
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+        }
+    
+        .footer-container-right {
+            grid-area: 1 / 2 / 2 / 3;
+
+        }
+    }
+}
+
+
+
