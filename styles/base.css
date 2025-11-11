@@ -82,7 +82,7 @@ h2, h3, .btn-green, btn-red, p {
 .btn-green {
     color: var(--txt-white);
     background-color: var(--bg-green);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem 2rem;
     border: none;
