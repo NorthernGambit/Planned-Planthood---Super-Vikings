@@ -48,6 +48,10 @@ body {
     background-color: var(--bg-red);
 }
 
+.fa-bars {
+    display: none;
+}
+
 .nav {
     background-color: var(--bg-white);
     width: 100%;
@@ -100,4 +104,22 @@ h2, h3, .btn-green, btn-red, p {
     border: none;
     border-radius: 8px;
     font-weight: 700;
+}
+
+@media (max-width: 600px) {
+
+    .fa-bars {
+        display: block;
+        position: fixed;
+        top: .5rem;
+        right: 2rem;
+        color: var(--txt-white);
+        font-size: 3rem;
+        /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+
+    }
+
+    .nav {
+        display: none;
+    }
 }
