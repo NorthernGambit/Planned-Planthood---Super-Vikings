@@ -13,7 +13,7 @@ header {
             overflow: hidden;
 
             .hero-bg {
-                width: 100%;
+                width: 105%;
             }
 
         }
@@ -23,9 +23,10 @@ header {
             text-align: center;
             display: grid;
             place-items: center;
+            gap: 1rem;
 
             .hero-img {
-                width: 75%;
+                width: 100%;
 
             }
 
@@ -33,6 +34,7 @@ header {
                 color: var(--txt-white);
                 font-size: 2.5rem;
                 font-weight: 500;
+                margin-bottom: 1rem;
             }
         }
     }
@@ -86,15 +88,12 @@ main {
                 display: flex;
                 flex-direction: column;
 
-                .btn-change {
-                    align-self: flex-end;
-                    background-color: var(--bg-green);
-                    margin-right: .75rem;
-
+                .btn-red, .btn-change {
+                    width: 7rem;
                 }
 
-                .btn-red {
-                    width: 7rem;
+                .btn-change {
+                    border: 1px solid var(--bg-green);
                 }
             }
         
@@ -141,14 +140,17 @@ footer {
     }
 }
 
+.btn-change {
+    align-self: flex-end;
+    background-color: var(--bg-green);
+    margin-right: .75rem;
+}
+
 @media (max-width: 600px) {
 
     header {
         .hero-section {
             aspect-ratio: 1;
-
-            .hero-bg-container {}
-
 
             .hero-container {
                 .hero-img {

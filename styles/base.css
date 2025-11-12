@@ -6,6 +6,8 @@
     --bg-white: #fff;
     --bg-black: #000;
     --bg-red: #B93857;
+    --bg-red-dark: #6E2133;
+    --bg-green-dark: #055647;
 
     --txt-white: #fff;
     --txt-green: #0A846E;
@@ -56,8 +58,8 @@ header > .fa-bars {
     display: none;
         position: fixed;
         z-index: 100;
-        top: .5rem;
-        right: 2rem;
+        top: .75rem;
+        right: .75rem;
         color: var(--txt-white);
         font-size: 3rem;
         filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.45));
@@ -101,20 +103,38 @@ h2, h3, .btn-green, btn-red, p {
     font-size: 1.5rem;
     font-weight: 700;
     padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+    border: 1px solid var(--bg-green);
 }
 
-.btn-red {
+.btn-red, .btn-change {
     color: var(--txt-white);
     background-color: var(--bg-red);
     font-size: 1rem;
     padding: .3rem 1rem;
-    border: none;
-    border-radius: 8px;
     font-weight: 700;
+    border: 1px solid var(--bg-red);
+}
+
+button {
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease;
+    border-style: solid;
+}
+
+.btn-green:hover, .btn-change:hover {
+    background-color: var(--bg-green-dark);
+    border-color: var(--bg-black);
+}
+
+.btn-red:hover {
+    background-color: var(--bg-red-dark);
+    border-color: var(--bg-black);
+}
+
+button:active {
+    transform: translateY(-5px);
 }
 
 .card {
