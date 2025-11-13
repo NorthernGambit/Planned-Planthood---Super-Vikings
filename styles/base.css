@@ -54,7 +54,7 @@ body {
     background-color: var(--bg-red);
 }
 
-header > .fa-bars {
+header > .header-burger-btn > .fa-bars {
     display: none;
         position: fixed;
         z-index: 100;
@@ -74,6 +74,10 @@ header > .fa-bars {
     ul {
         display: flex;
         justify-content: space-around;
+
+        .burger-logo {
+            display: none;
+        }
 
         li {
             list-style-type: none;
@@ -215,13 +219,75 @@ button:active {
 
 @media (max-width: 600px) {
 
-    header > .fa-bars {
+    header > .header-burger-btn > .fa-bars {
         display: block;
 
     }
 
+    header {
+        .header-burger:checked ~ .nav {
+            right: 0;
+        }
+
+        .header-burger-btn::after {
+
+        }
+    }
+
     .nav {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -500px;
+        z-index: 11;
+        width: 70vw;
+        box-shadow: 0px 4px 4px 0px #000000c1;
+        transition: all .3s ease-in-out;
+
+        ul {
+            flex-direction: column;
+
+            li {
+                border-bottom: 1px solid var(--bg-green-dark);
+                a {
+                    display: inline-block;
+                    padding: 1.5rem 2rem;
+                    font-size: 1.5rem;
+                }
+            }
+
+            li:first-child {
+                background-image: url(../assets/plannedplanthoodlogo.svg);
+                background-repeat: no-repeat;
+                background-size: 15%;
+                background-position: 10px center;
+            }
+
+            .burger-logo {
+                display: block;
+                background-color: var(--bg-green-dark);
+                color: var(--txt-white);
+                font-family: 'Lato', sans-serif;
+                padding: 1.5rem 0 1.5rem 5.1rem;
+                font-size: 1.4rem;
+
+                img {
+                    width: 9%;
+                    top: 10px;
+                    right: 330px;
+                    position: fixed;
+                }
+            }
+
+            li:last-child {
+                border: none;
+            }
+
+            li:hover:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5)) {
+                background-color: lightgrey;
+                cursor: pointer;
+            }
+        }
+        
     }
 
     
