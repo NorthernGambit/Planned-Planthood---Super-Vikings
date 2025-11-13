@@ -54,17 +54,29 @@ body {
     background-color: var(--bg-red);
 }
 
-header > .header-burger-btn > .fa-bars {
+.fa-bars, .fa-x {
+    cursor: pointer;
     display: none;
-        position: fixed;
-        z-index: 100;
-        top: .75rem;
-        right: .75rem;
-        color: var(--txt-white);
-        font-size: 3rem;
-        filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.45));
+    position: fixed;
+    z-index: 100;
+    top: .75rem;
+    right: .75rem;
+    font-size: 3rem;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.9));
 }
 
+
+.fa-x {
+    scale: .8;
+}
+
+.overlay {
+    display: none;
+}
+
+.header-burger {
+    display: none;
+}
 .nav {
     background-color: var(--bg-white);
     width: 100%;
@@ -73,21 +85,31 @@ header > .header-burger-btn > .fa-bars {
     
     ul {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-around; */
 
         .burger-logo {
             display: none;
         }
 
         li {
+            flex: 1;
             list-style-type: none;
-            padding: 1rem 0;
+            text-align: center;
+            /* padding: 1rem 0; */
 
             a {
+                width: 100%;
+                display: inline-block;
+                padding: 1rem 0;
                 text-decoration: none;
                 font-size: 1.25rem;
                 font-weight: 500;
                 color: var(--txt-green-dark);
+            }
+
+            a:hover {
+                background: var(--bg-green-dark);
+                color: var(--txt-white);
             }
         }
     }
@@ -108,7 +130,7 @@ h2, h3, .btn-green, btn-red, p {
     font-weight: 700;
     padding: 1rem 2rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--bg-green);
+    /* border: 1px solid var(--bg-green); */
 }
 
 .btn-red, .btn-change {
@@ -117,24 +139,25 @@ h2, h3, .btn-green, btn-red, p {
     font-size: 1rem;
     padding: .3rem 1rem;
     font-weight: 700;
-    border: 1px solid var(--bg-red);
+    /* border: 1px solid var(--bg-red); */
 }
 
 button {
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all .3s ease;
-    border-style: solid;
+    transition: all .2s ease;
+    /* border-style: solid; */
 }
 
 .btn-green:hover, .btn-change:hover {
     background-color: var(--bg-green-dark);
-    border-color: var(--bg-black);
+    /* border-color: var(--bg-black); */
 }
 
 .btn-red:hover {
     background-color: var(--bg-red-dark);
-    border-color: var(--bg-black);
+    /* border-color: var(--bg-black); */
 }
 
 button:active {
@@ -144,6 +167,7 @@ button:active {
 .card {
     width: 100%;
     box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all .2s ease;
 
     .card-img {
         position: relative;
@@ -202,44 +226,79 @@ button:active {
         }
     }
 }
+
+.card:hover {
+    transform: translateY(-8px);
+}
                 
 .footer-back-to-top {
     text-align: center;
-        padding: 1.5rem 0;
-
+        
         a {
+            width: 100%;
+            display: inline-block;
+            padding: 1.5rem 0;
             text-decoration: none;
             color: var(--txt-black);
+
             .back-to-top-txt {
                 font-size: 1.5rem;
                 font-weight: 400;
             }
-    }
+        }
+
+        a:hover {
+            background-color: var(--bg-green-dark);
+            color: var(--txt-white);
+        }
     }
 
 @media (max-width: 600px) {
 
-    header > .header-burger-btn > .fa-bars {
-        display: block;
+    
 
+    .fa-bars {
+        display: block;
+        cursor: pointer;
     }
 
     header {
+
         .header-burger:checked ~ .nav {
-            right: 0;
+            top: 0;
         }
 
-        .header-burger-btn::after {
+        .header-burger:checked ~ .overlay {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, .35);
+            backdrop-filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: default;
+            z-index: 11;
+        }
 
+        .header-burger:checked ~ .header-burger-btn{
+            .fa-bars {
+                display: none;
+            }
+
+            .fa-x {
+                display: block;
+            }
         }
     }
 
     .nav {
         position: fixed;
-        top: 0;
-        right: -500px;
+        top: -390px;
         z-index: 11;
-        width: 70vw;
+        width: 100vw;
+        /* max-width: 390px; */
+        width: 100%;
         box-shadow: 0px 4px 4px 0px #000000c1;
         transition: all .3s ease-in-out;
 
@@ -248,18 +307,27 @@ button:active {
 
             li {
                 border-bottom: 1px solid var(--bg-green-dark);
+                background-color: var(--bg-green);
+                text-align: start;
+
                 a {
                     display: inline-block;
+                    color: var(--txt-white);
                     padding: 1.5rem 2rem;
                     font-size: 1.5rem;
+                }
+
+                a:hover {    
+                    background-color: var(--bg-white);
+                    color: var(--txt-green-dark);
                 }
             }
 
             li:first-child {
                 background-image: url(../assets/plannedplanthoodlogo.svg);
                 background-repeat: no-repeat;
-                background-size: 15%;
-                background-position: 10px center;
+                background-size: 40px;
+                background-position: 30px center;
             }
 
             .burger-logo {
@@ -281,14 +349,15 @@ button:active {
             li:last-child {
                 border: none;
             }
-
-            li:hover:is(:nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5)) {
-                background-color: lightgrey;
-                cursor: pointer;
-            }
         }
         
     }
 
     
+}
+
+@media (min-width: 601px) {
+    .nav {
+    transition: none;
+    }
 }
