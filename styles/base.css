@@ -127,7 +127,6 @@ h2, h3, .btn-green, btn-red, p {
     font-family: "Lato", sans-serif;
     font-size: 2rem;
     font-weight: 600;
-    /* margin-bottom: 1rem; */
 }
 
 .planned-content, .planted-content, .main-content {
@@ -184,6 +183,7 @@ button:active {
     width: 100%;
     box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: all .2s ease;
+    cursor: pointer;
 
     .card-img {
         position: relative;
