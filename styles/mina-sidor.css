@@ -13,14 +13,16 @@ header {
         .hero-bg-container {
             grid-area: 1 / 1 / 2 / 2;
             overflow: hidden;
+            background-color: black;
 
             .hero-bg {
                 width: 105%;
+                filter: opacity(80%);
             }
-
         }
 
         .hero-container {
+            filter: opacity(100%);
             grid-area: 1 / 1 / 2 / 2;
             text-align: center;
             display: grid;
@@ -89,8 +91,11 @@ main {
         }
     }
 
+    /* .btn-red, .btn-change {
+        width: 7rem;
+    } */
+
     .planned-content {
-        margin-bottom: 3rem;
 
             .card {
                 display: flex;
@@ -99,33 +104,10 @@ main {
                 .btn-red, .btn-change {
                     width: 7rem;
                 }
-
-                .btn-change {
-                    border: 1px solid var(--bg-green);
-                }
             }
         
     }
 }
-
-/* SHARED GRID PROPERTIES */
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.grid-title {
-    font-family: "Lato", sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-}
-
-.planned-content, .planted-content {
-    text-align: center;
-}        
 
 /* FOOTER */
 footer {
@@ -159,13 +141,22 @@ footer {
 @media (max-width: 600px) {
 
     header {
+
         .hero-section {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
             aspect-ratio: 1;
 
             .hero-container {
+                gap: 2rem;
 
                 .hero-img {
-                    width: 110%;
+                    width: 90%;
+                    margin-top: 2rem;
+                }
+
+                .hero-title {
+                    font-size: 2rem;
+                    margin-bottom: 0rem;
                 }
             }
         }
@@ -186,6 +177,12 @@ footer {
             .main-form-container {
                 text-align: start;
                 flex-direction: column;
+
+                .main-form-section {
+                    .form-label {
+                        font-size: .75rem;
+                    }
+                }
             }
             
             .main-form-container:nth-of-type(1) {
@@ -193,58 +190,17 @@ footer {
             }
 
             .btn-green {
-                padding: .5rem 1.5rem;
+                padding: .5rem 1.25rem;
+                font-size: 1rem;
             }
         }
-    
-        .grid-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
+
+        .card-img-overlay {
+            display: none;
         }
 
-        .content-grid {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 0rem;
-            gap: 1rem;
-
-            .card {
-
-                .card-img {
-
-                    img:nth-child(2) {
-                        display: none;
-                    }
-                }
-
-                .btn-change {
-                    display: none;
-                }
-
-                .card-info {
-                    margin: .5rem;
-
-                    .card-title {
-                        font-size: .9rem;
-                    }
-
-                    .card-date {
-                        font-size: 0.625rem;
-                    }
-
-                    .card-name {
-                        font-size: 0.625rem;
-                    }
-
-                    .btn-red {
-                        display: none;
-                    }
-
-                    .fa-trash {
-                        display: block;
-                    }
-                }
-            }
+        .btn-change {
+            display: none;
         }
     }
 
