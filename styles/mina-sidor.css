@@ -231,3 +231,35 @@ footer {
         }
     }
 }
+
+@media (min-width: 601px) and (max-width: 800px) {
+    header {
+        .hero-section {
+
+            .hero-container {
+
+                .hero-img {
+                    width: 65%;
+                }
+            }
+        }
+    }
+    main {
+
+        .planned-content {
+
+            .card {
+
+                .btn-change {
+                    font-size: .75rem;
+                    margin-right: .5rem;
+                }   
+
+                .btn-red, .btn-change {
+                    width: 5rem;
+                }
+            }
+        }
+    }
+    
+}

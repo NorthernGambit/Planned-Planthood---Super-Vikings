@@ -184,6 +184,8 @@ button:active {
     box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: all .2s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 
     .card-img {
         position: relative;
@@ -207,14 +209,18 @@ button:active {
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
     }
 
+    .card-info:nth-of-type(2) {
+        flex: 1;
+
+    }
     .card-info {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         margin: .75rem;
+        text-align: start;
 
         .card-title {
             font-family: "Lato", sans-serif;
@@ -224,6 +230,7 @@ button:active {
         }
 
         .card-date {
+            text-align: end;
             font-size: 1rem;
             font-weight: 700;
             color: var(--txt-black);
@@ -285,6 +292,7 @@ button:active {
             top: 0;
         }
 
+        /* OVERLAY - CLICK OUTSIDE MENU TO CLOSE - BLUR BACKGROUND */
         .menu-toggle:checked ~ .menu-overlay {
             display: inline-block;
             background-color: rgba(0, 0, 0, .35);
@@ -292,9 +300,8 @@ button:active {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: default;
+            right: 0;
+            bottom: 0;
             z-index: 11;
         }
 
@@ -313,7 +320,7 @@ button:active {
     /* HAMBURGER MENU TRANSFORMAION AND TRANSITION */
     .nav {
         position: fixed;
-        top: -390px;
+        top: -420px;
         z-index: 11;
         width: 100vw;
         width: 100%;
@@ -369,6 +376,10 @@ button:active {
             }
         }
         
+    }
+
+    .card:hover {
+    transform: translateY(-4px);
     }
 
     .grid-title {
@@ -431,8 +442,43 @@ button:active {
 }
 
 /* DISABLING NAV TRANSITION IN DESKTOP MODE */
-@media (min-width: 601px) {
+@media (min-width: 601px) and (max-width: 800px) {
     .nav {
     transition: none;
+    }
+
+    .card {
+
+        .card-img {
+
+            img:nth-child(2) {
+                width: 50%;
+            }
+
+        }
+
+        .card-info {
+            margin: .5rem;
+
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .card-date {
+                font-size: 0.75rem;
+            }
+
+            .card-name {
+                font-size: 0.75rem;
+            }
+
+            .btn-red {
+                font-size: .75rem;
+            }
+        }
+    }
+
+    .content-grid {
+        gap: 1.25rem;
     }
 }
