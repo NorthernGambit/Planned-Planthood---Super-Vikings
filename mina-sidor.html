@@ -12,23 +12,26 @@
 	</head>
 	<body id="top">
 		<div class="wrapper">
+			<!-- HEADER -->
 			<header>
-				<input type="checkbox" class="header-burger" id="burger" />
-				<label for="burger" class="overlay"></label>
-				<label for="burger" class="header-burger-btn">
-					<img src="./assets/menu-bars.svg" class="fa-bars" />
-					<img src="./assets/menu-close.svg" class="fa-x" />
+				<!-- HAMBURGER MENU -->
+				<input type="checkbox" class="menu-toggle" aria-hidden="true" id="is-menu-checked" />
+				<label for="is-menu-checked" class="menu-overlay"></label>
+				<label for="is-menu-checked" class="menu-btn"><img src="./assets/menu-bars.svg" class="fa-bars" /><img src="./assets/menu-close.svg" class="fa-x" />
 				</label>
+
+				<!-- NAVIGATION -->
 				<nav class="nav">
 					<ul>
-						<li class="burger-logo">Planned Planthood</li>
-
+						<li class="menu-logo">Planned Planthood</li>
 						<li><a href="./index.html">PLANER</a></li>
 						<li><a href="">HISTORIK</a></li>
 						<li><a href="">TIPS</a></li>
 						<li><a href="./mina-sidor.html">LOGGA IN</a></li>
 					</ul>
 				</nav>
+
+				<!-- HERO SECTION -->
 				<section class="hero-section">
 					<section class="hero-bg-container">
 						<img src="./assets/hand2.avif" alt="" class="hero-bg" />
@@ -43,11 +46,13 @@
 					</section>
 				</section>
 			</header>
+			<!-- MAIN -->
 			<main>
+				<!-- MAIN FORM SECTION -->
 				<form class="main-form">
 					<h2 class="main-form-title">Lägg till ny plantering:</h2>
-					<section class="main-form-section">
-						<section class="main-form-section2">
+					<section class="main-form-container">
+						<section class="main-form-section">
 							<label class="form-label" for="plantName"
 								>Planta: </label
 							><br />
@@ -57,14 +62,15 @@
 								type="text"
 							/>
 						</section>
-						<section class="main-form-section2">
+						<section class="main-form-section">
 							<label class="form-label" for="date">Datum: </label
 							><br />
 							<input class="form-input" id="date" type="date" />
 						</section>
 					</section>
-					<section class="main-form-section">
-						<section class="main-form-section2">
+
+					<section class="main-form-container">
+						<section class="main-form-section">
 							<label class="form-label" for="plantName2"
 								>Planta: </label
 							><br />
@@ -74,7 +80,7 @@
 								type="text"
 							/>
 						</section>
-						<section class="main-form-section2">
+						<section class="main-form-section">
 							<label class="form-label" for="date2">Datum: </label
 							><br />
 							<input class="form-input" id="date2" type="date" />
@@ -82,9 +88,11 @@
 					</section>
 					<button type="button" class="btn-green">LÄGG TILL</button>
 				</form>
-				<section class="planned">
+
+				<!-- PLANNED PLANTS CONTENT -->
+				<section class="planned-content">
 					<h2 class="grid-title">Dina planerade planteringar:</h2>
-					<section class="planned-grid">
+					<section class="content-grid">
 						<article class="card">
 							<section class="card-img">
 								<img src="./assets/gurka.avif" alt="Gurka" />
@@ -107,9 +115,11 @@
 						</article>
 					</section>
 				</section>
-				<section class="main-planted">
+
+				<!-- PLANTED PLANTS CONTENT -->
+				<section class="planted-content">
 					<h2 class="grid-title">Dina planterade planteringar:</h2>
-					<section class="planned-grid">
+					<section class="content-grid">
 						<article class="card">
 							<section class="card-img">
 								<img src="./assets/gurka.avif" alt="Gurka" />
@@ -151,6 +161,7 @@
 					</section>
 				</section>
 			</main>
+			<!-- FOOTER -->
 			<footer>
 				<section class="footer-gallery">
 					<img
@@ -174,6 +185,7 @@
 						class="footer-img"
 					/>
 				</section>
+				<!-- BACK TO TOP -->
 				<section class="footer-back-to-top">
 					<a href="#top"
 						><h3 class="back-to-top-txt">

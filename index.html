@@ -14,38 +14,30 @@
 		<div class="wrapper">
 			<!-- HEADER -->
 			<header>
+				<!-- HERO SECTION -->
 				<section class="hero">
 					<section class="hero-img">
-						<img
-							src="./assets/plannedplanthoodlogo.svg"
-							alt="Planned Planthoods logotyp"
-						/>
-						<img src="./assets/hand1.avif" alt="Hand" />
+						<img src="./assets/plannedplanthoodlogo.svg" alt="Planned Planthoods logotyp" />
+						<img src="./assets/hand1.avif" alt="Hand som håller i en planta" />
 					</section>
 					<section class="box-img bg-brown">
-						<img src="./assets/seedling.svg" alt="Frön" />
+						<img src="./assets/seedling.svg" alt="Planta som börjat gro" />
 					</section>
 					<section class="box-img bg-green">
-						<img src="./assets/spade.svg" alt="Spade" />
+						<img src="./assets/spade.svg" alt="Spade i jord" />
 					</section>
 				</section>
 
-				<input type="checkbox" class="header-burger" id="burger" />
-				<label for="burger" class="overlay"></label>
-				<label for="burger" class="header-burger-btn">
-					<img src="./assets/menu-bars.svg" class="fa-bars" />
-					<img src="./assets/menu-close.svg" class="fa-x" />
+				<!-- HAMBURGER MENU -->
+				<input type="checkbox" class="menu-toggle" aria-hidden="true" id="is-menu-checked" />
+				<label for="is-menu-checked" class="menu-overlay"></label>
+				<label for="is-menu-checked" class="menu-btn"><img src="./assets/menu-bars.svg" class="fa-bars" /><img src="./assets/menu-close.svg" class="fa-x" />
 				</label>
 
+				<!-- NAVIGATION -->
 				<nav class="nav">
 					<ul>
-						<li class="burger-logo">
-							Planned Planthood
-							<!-- <img
-							src="./assets/plannedplanthoodlogo.svg"
-							alt="Planned Planthoods logotyp"/> -->
-						</li>
-
+						<li class="menu-logo">Planned Planthood</li>
 						<li><a href="./index.html">PLANER</a></li>
 						<li><a href="">HISTORIK</a></li>
 						<li><a href="">TIPS</a></li>
@@ -59,10 +51,10 @@
 				<!-- ARTICLE 1 -->
 				<article class="article">
 					<hr />
-					<section class="article-box-left bg-green">
+					<section class="article-img-box bg-green">
 						<img src="./assets/seedpackage.svg" alt="Fröpåse" />
 					</section>
-					<section class="article-box-right">
+					<section class="article-txt-box">
 						<h2>Säsong att så</h2>
 						<p>
 							Våren är äntligen här i kollektivet!<br />Lorem
@@ -74,10 +66,10 @@
 				</article>
 				<!-- MAIN GRID -->
 				<section class="main-content">
-					<h2 class="main-content-title">
+					<h2 class="main-title">
 						Våra planerade planteringar:
 					</h2>
-					<section class="main-content-grid">
+					<section class="content-grid">
 						<article class="card">
 							<section class="card-img">
 								<img src="./assets/gurka.avif" alt="Gurka" />
@@ -100,11 +92,7 @@
 						<article class="card">
 							<section class="card-img">
 								<img src="./assets/tomat.avif" alt="Tomat" />
-								<img
-									src="./assets/plant.svg"
-									alt=""
-									class="card-img-overlay"
-								/>
+								<img src="./assets/plant.svg" alt="" class="card-img-overlay" />
 							</section>
 							<section class="card-info">
 								<h2 class="card-title">Tomat</h2>
@@ -117,16 +105,8 @@
 							</section>
 						</article>
 						<article class="card">
-							<section class="card-img">
-								<img
-									src="./assets/tomat2.avif"
-									alt="Körsbärstomat"
-								/>
-								<img
-									src="./assets/plant.svg"
-									alt=""
-									class="card-img-overlay"
-								/>
+							<section class="card-img"><img src="./assets/tomat2.avif" alt="Körsbärstomat"/>
+								<img src="./assets/plant.svg" alt="" class="card-img-overlay" />
 							</section>
 							<section class="card-info">
 								<h2 class="card-title">Tomat</h2>
@@ -140,10 +120,7 @@
 						</article>
 						<article class="card">
 							<section class="card-img">
-								<img
-									src="./assets/sockerärta.avif"
-									alt="Sockerärtor"
-								/>
+								<img src="./assets/sockerärta.avif" alt="Sockerärtor" />
 								<img
 									src="./assets/plant.svg"
 									alt=""
@@ -162,15 +139,8 @@
 						</article>
 						<article class="card">
 							<section class="card-img">
-								<img
-									src="./assets/majrova.avif"
-									alt="Majrova"
-								/>
-								<img
-									src="./assets/plant.svg"
-									alt=""
-									class="card-img-overlay"
-								/>
+								<img src="./assets/majrova.avif" alt="Majrova" />
+								<img src="./assets/plant.svg" alt="" class="card-img-overlay" />
 							</section>
 							<section class="card-info">
 								<h2 class="card-title">Majrova</h2>
@@ -206,10 +176,10 @@
 				</section>
 				<!-- ARTICLE 2 -->
 				<article class="article">
-					<section class="article-box-left bg-green">
-						<img src="./assets/plant.svg" alt="Planta" />
+					<section class="article-img-box bg-green">
+						<img src="./assets/plant.svg" alt="Planta i kruka" />
 					</section>
-					<section class="article-box-right">
+					<section class="article-txt-box">
 						<h2>Våra tidigare odlingar</h2>
 						<p>
 							Våren är äntligen här i kollektivet!<br />
@@ -247,10 +217,12 @@
 					<section class="footer-container-right">
 						<img
 							src="./assets/plannedplanthoodlogo.svg"
-							alt="Planned planthoods logotyp"
+							alt="Planned Planthoods logotyp"
 						/>
 					</section>
 				</section>
+
+				<!-- BACK TO TOP -->
 				<section class="footer-back-to-top">
 					<a href="#top"
 						><h3 class="back-to-top-txt">
